@@ -21,7 +21,9 @@ class MainActivity : AppCompatActivity() {
 
         addFoodBtn.setOnClickListener {
             val newFood = addFoodTxt.text.toString()
-            foodList.add(newFood)
+            if (newFood != "") {
+                foodList.add(newFood)
+            }
             addFoodTxt.text.clear()
             println(foodList)
         }
