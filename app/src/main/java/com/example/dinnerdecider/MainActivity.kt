@@ -18,5 +18,13 @@ class MainActivity : AppCompatActivity() {
             val randomFood = random.nextInt(foodList.count())
             selectedFoodTxt.text = foodList[randomFood]
         }
+
+        addFoodBtn.setOnClickListener {
+            val newFood = addFoodTxt.text.toString()
+            foodList.add(newFood)
+            addFoodTxt.text.clear()
+            println(foodList)
+        }
+
     }
 }
