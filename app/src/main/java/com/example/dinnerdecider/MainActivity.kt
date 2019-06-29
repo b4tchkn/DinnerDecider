@@ -2,6 +2,7 @@ package com.example.dinnerdecider
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
@@ -23,6 +24,11 @@ class MainActivity : AppCompatActivity() {
             val newFood = addFoodTxt.text.toString()
             if (newFood != "") {
                 foodList.add(newFood)
+            } else {
+                AlertDialog.Builder(this)
+                    .setTitle("Error:Input new food")
+                    .setPositiveButton("OK") { dialog, which ->
+                    }.show()
             }
             addFoodTxt.text.clear()
             println(foodList)
